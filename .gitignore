@@ -1,0 +1,31 @@
+# Dependencies
+.venv/
+node_modules/
+__pycache__/
+*.pyc
+
+# Environment
+.env
+.env.local
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Build artifacts
+*.skill
+dist/
+build/
+
+# Evaluation workspace (optional to commit)
+yolo-mobile-integration-workspace/
+
+# Crawler progress (not needed in repo)
+progress.json
+nop/

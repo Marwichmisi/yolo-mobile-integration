@@ -1,0 +1,35 @@
+{
+  "skill_name": "yolo-mobile-integration",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Je veux créer une application Flutter qui détecte les objets en temps réel avec la caméra pour un projet de sécurité domestique. Le modèle doit fonctionner sur iOS et Android. Exporte le modèle YOLO26 et génère le code d'intégration complet.",
+      "expected_output": "Le skill doit: 1) Choisir YOLO26n comme modèle, 2) Exporter vers CoreML (iOS) et LiteRT (Android), 3) Générer le code Flutter avec Platform Channels, 4) Inclure l'écran de détection avec bounding boxes, 5) Coordonner avec les skills Flutter existants",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "I need a React Native app that counts people entering a store. It should use pose estimation to track individuals and count them as they cross a virtual line. The app needs to work offline on both iOS and Android.",
+      "expected_output": "The skill should: 1) Choose YOLO26-pose for pose estimation, 2) Export to ExecuTorch for cross-platform, 3) Generate React Native Native Module code, 4) Implement line-crossing counting logic, 5) Handle offline inference, 6) Coordinate with react-native-best-practices skill",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "J'ai un Raspberry Pi 5 avec une caméra et je veux compter les véhicules dans un parking. Le modèle doit tourner localement sans internet. Quel format utiliser et comment déployer ?",
+      "expected_output": "The skill should: 1) Recommend YOLO26n with NCNN format for ARM, 2) Provide deployment steps for RPi 5, 3) Include camera setup with picamera2, 4) Give benchmark expectations (~7.8 FPS), 5) Reference hardware/raspberry-pi.md",
+      "files": []
+    },
+    {
+      "id": 4,
+      "prompt": "Create a fitness coaching app with Flutter that analyzes exercise form in real-time using pose estimation. It should detect squats, push-ups, and bicep curls, count repetitions, and give feedback on form.",
+      "expected_output": "The skill should: 1) Choose YOLO26-pose, 2) Reference use-cases/fitness-coach.md, 3) Export to CoreML + LiteRT, 4) Generate Flutter code with exercise detection logic, 5) Include rep counting algorithm, 6) Provide form analysis feedback system",
+      "files": []
+    },
+    {
+      "id": 5,
+      "prompt": "I want to build a mobile web app that runs in a browser and detects objects from the phone camera. It needs to work on any phone with a modern browser, no app install required.",
+      "expected_output": "The skill should: 1) Recommend LiteRT.js or TF.js format, 2) Export to web-compatible format, 3) Generate HTML/JS code with camera access, 4) Use WebGPU/WASM for acceleration, 5) Reference platforms/web-tfjs.md",
+      "files": []
+    }
+  ]
+}
