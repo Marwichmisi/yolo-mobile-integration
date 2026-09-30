@@ -4,7 +4,7 @@
 
 ### *The Ultimate Skill for Integrating YOLO26 Vision Models into Mobile Applications*
 
-[![License: AGPL-3.0](https://img.shields.io/badge/License-AGPL%203.0-blue.svg)](https://www.gnu.org/licenses/agpl-3.0)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)](https://www.python.org/downloads/)
 [![Ultralytics](https://img.shields.io/badge/Ultralytics-YOLO26-red.svg)](https://github.com/ultralytics/ultralytics)
 [![Flutter](https://img.shields.io/badge/Flutter-3.0+-blue.svg)](https://flutter.dev)
@@ -349,11 +349,11 @@ We welcome contributions! Please see our [Contributing Guide](CONTRIBUTING.md) f
 
 ## 📄 License
 
-This project is licensed under the [AGPL-3.0 License](LICENSE) - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the [MIT License](LICENSE) - see the [LICENSE](LICENSE) file for details.
 
-### Ultralytics License
+### YOLO26 Models License
 
-YOLO26 models are licensed under [AGPL-3.0](https://www.gnu.org/licenses/agpl-3.0.html) or [Enterprise License](https://www.ultralytics.com/license).
+YOLO26 models are licensed under [AGPL-3.0](https://www.gnu.org/licenses/agpl-3.0.html) or [Enterprise License](https://www.ultralytics.com/license) by Ultralytics.
 
 ---
 
