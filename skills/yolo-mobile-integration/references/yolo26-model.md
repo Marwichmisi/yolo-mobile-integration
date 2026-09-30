@@ -141,11 +141,11 @@ results = model("image.jpg")
 
 | Taille | Paramètres | FLOPs | ID | Cas d'utilisation mobile |
 |--------|-----------|-------|-----|--------------------------|
-| **Nano (n)** | ~3M | ~8G | N | Edge, mobile, temps réel CPU |
-| **Small (s)** | ~11M | ~30G | S | Équilibre vitesse/précision |
-| **Medium (m)** | ~20M | ~55G | M | Précision avec calcul modéré |
-| **Large (l)** | ~26M | ~80G | L | Haute précision, GPU disponible |
-| **Extra-Large (x)** | ~57M | ~170G | X | Précision maximale, serveur |
+| **Nano (n)** | 2.4M | 5.5B | N | Edge, mobile, temps réel CPU |
+| **Small (s)** | 9.5M | 20.9B | S | Équilibre vitesse/précision |
+| **Medium (m)** | 20.4M | 68.4B | M | Précision avec calcul modéré |
+| **Large (l)** | 24.8M | 86.8B | L | Haute précision, GPU disponible |
+| **Extra-Large (x)** | 55.7M | 194.4B | X | Précision maximale, serveur |
 
 ### Recommandations par cible de déploiement
 
@@ -163,13 +163,13 @@ results = model("image.jpg")
 
 ### Détection sur COCO
 
-| Modèle | mAP val 50-95 | Latence T4 TensorRT (ms) | Params (M) | FLOPs (G) |
+| Modèle | mAP val 50-95 | Latence T4 TensorRT (ms) | Params (M) | FLOPs (B) |
 |--------|---------------|--------------------------|------------|-----------|
-| YOLO26n | 40,9 | 1,7 | ~3 | ~8 |
-| YOLO26s | 48,6 | ~3 | ~11 | ~30 |
-| YOLO26m | 53,1 | ~5 | ~20 | ~55 |
-| YOLO26l | 55,0 | ~8 | ~26 | ~80 |
-| YOLO26x | 57,5 | 11,8 | ~57 | ~170 |
+| YOLO26n | 40,9 | 1,7 | 2,4 | 5,5 |
+| YOLO26s | 48,6 | 2,5 | 9,5 | 20,9 |
+| YOLO26m | 53,1 | 4,7 | 20,4 | 68,4 |
+| YOLO26l | 55,0 | 6,2 | 24,8 | 86,8 |
+| YOLO26x | 57,5 | 11,8 | 55,7 | 194,4 |
 
 ### Améliorations par rapport à YOLO11
 

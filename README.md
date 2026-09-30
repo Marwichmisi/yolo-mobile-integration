@@ -192,12 +192,15 @@ Choose your platform:
 
 ### Edge Devices
 
-| Device | Format | YOLO26n FPS | YOLO26s FPS |
-|--------|--------|-------------|-------------|
-| Raspberry Pi 5 | NCNN | ~8 | ~4 |
-| Jetson Orin Nano | TensorRT FP16 | ~45 | ~25 |
-| Jetson AGX Orin | TensorRT FP16 | ~120 | ~70 |
-| Coral USB Accelerator | Edge TPU | ~30 | ~15 |
+| Device | Format | YOLO26n | YOLO26s |
+|--------|--------|---------|---------|
+| Raspberry Pi 5 | NCNN | 67 ms (~15 FPS) | — |
+| Raspberry Pi 5 | ONNX | 126 ms (~8 FPS) | 353 ms (~3 FPS) |
+| Raspberry Pi 5 | OpenVINO | 105 ms (~10 FPS) | — |
+| Raspberry Pi 5 | MNN | 92 ms (~11 FPS) | — |
+| Jetson Orin Nano | TensorRT FP16 | 4.6 ms (~219 FPS) | — |
+| Jetson AGX Orin | TensorRT FP16 | 2.6 ms (~381 FPS) | — |
+| Coral USB Accelerator | Edge TPU | ~30 FPS | ~15 FPS |
 
 ---
 
