@@ -1,169 +1,380 @@
-# YOLO26 Mobile Integration
+<div align="center">
 
+# 🚀 YOLO26 Mobile Integration
+
+### *The Ultimate Skill for Integrating YOLO26 Vision Models into Mobile Applications*
+
+[![License: AGPL-3.0](https://img.shields.io/badge/License-AGPL%203.0-blue.svg)](https://www.gnu.org/licenses/agpl-3.0)
+[![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)](https://www.python.org/downloads/)
+[![Ultralytics](https://img.shields.io/badge/Ultralytics-YOLO26-red.svg)](https://github.com/ultralytics/ultralytics)
+[![Flutter](https://img.shields.io/badge/Flutter-3.0+-blue.svg)](https://flutter.dev)
+[![React Native](https://img.shields.io/badge/React%20Native-0.70+-blue.svg)](https://reactnative.dev)
+[![iOS](https://img.shields.io/badge/iOS-15+-black.svg)](https://developer.apple.com/ios/)
+[![Android](https://img.shields.io/badge/Android-8+-green.svg)](https://developer.android.com)
 [![skills.sh](https://skills.sh/b/Marwichmisi/yolo-mobile-integration)](https://skills.sh/Marwichmisi/yolo-mobile-integration)
+[![Stars](https://img.shields.io/github/stars/Marwichmisi/yolo-mobile-integration?style=social)](https://github.com/Marwichmisi/yolo-mobile-integration/stargazers)
+[![Forks](https://img.shields.io/github/forks/Marwichmisi/yolo-mobile-integration?style=social)](https://github.com/Marwichmisi/yolo-mobile-integration/network/members)
 
-Integrate YOLO26 computer vision models into mobile applications (Flutter, React Native, native iOS/Android) and edge devices (Raspberry Pi, Jetson, Coral).
+<p align="center">
+  <a href="#-features">Features</a> •
+  <a href="#-quick-start">Quick Start</a> •
+  <a href="#-supported-tasks">Supported Tasks</a> •
+  <a href="#-export-formats">Export Formats</a> •
+  <a href="#-benchmarks">Benchmarks</a> •
+  <a href="#-use-cases">Use Cases</a> •
+  <a href="#-documentation">Documentation</a> •
+  <a href="#-contributing">Contributing</a>
+</p>
 
-## What It Does
+<p align="center">
+  <img src="https://assets.ultralytics.com/yolo26/banner.png" alt="YOLO26 Mobile Integration" width="800">
+</p>
 
-This skill orchestrates the full pipeline from model selection to on-device deployment:
+</div>
 
-- **Model Selection** — Choose the right YOLO26 variant (nano/small/medium/large/xlarge) and task (detection, segmentation, pose, classification, OBB, semantic)
-- **Export** — Convert to mobile formats (CoreML, LiteRT, NCNN, ExecuTorch, ONNX, TF.js)
-- **Integration** — Generate platform-specific code (Flutter Platform Channels, React Native Native Modules, Swift Vision, Kotlin LiteRT)
-- **Use Cases** — Implement real-world features (fitness coaching, security alarms, object counting, parking management, AR measurement, heatmaps, privacy blurring)
-- **Edge Deployment** — Deploy on Raspberry Pi, NVIDIA Jetson, or Google Coral
+---
 
-## When to Use
+## 📋 Table of Contents
 
-Use this skill whenever you need to:
+- [✨ Features](#-features)
+- [🚀 Quick Start](#-quick-start)
+- [🎯 Supported Tasks](#-supported-tasks)
+- [📦 Export Formats](#-export-formats)
+- [📊 Benchmarks](#-benchmarks)
+- [💡 Use Cases](#-use-cases)
+- [📱 Platform Support](#-platform-support)
+- [🔧 Installation](#-installation)
+- [📖 Documentation](#-documentation)
+- [🤝 Contributing](#-contributing)
+- [📄 License](#-license)
+- [🙏 Acknowledgements](#-acknowledgements)
 
-- Add object detection, segmentation, or pose estimation to a mobile app
-- Export YOLO models to CoreML/TFLite/NCNN/ExecuTorch
-- Build vision-powered mobile features (camera apps, fitness trackers, security systems)
-- Deploy YOLO26 on edge devices (Raspberry Pi, Jetson, Coral)
-- Create real-time computer vision applications on iOS, Android, or web
+---
 
-## Installation
+## ✨ Features
+
+| Feature | Description |
+|---------|-------------|
+| 🎯 **7 Vision Tasks** | Detection, Segmentation, Semantic, Depth, Classification, Pose, OBB |
+| 📱 **Multi-Platform** | iOS (CoreML), Android (LiteRT), Flutter, React Native, Web |
+| ⚡ **Real-Time** | Optimized for on-device inference with NMS-free architecture |
+| 🔌 **22 Export Formats** | CoreML, LiteRT, NCNN, ExecuTorch, ONNX, TensorRT, and more |
+| 🎨 **Production-Ready** | Complete code templates for all major platforms |
+| 📚 **Comprehensive Docs** | 25+ reference files with examples and benchmarks |
+| 🔧 **Helper Scripts** | Export, benchmark, and project scaffolding tools |
+| 🌐 **Edge Ready** | Raspberry Pi, NVIDIA Jetson, Google Coral support |
+
+---
+
+## 🚀 Quick Start
+
+### 📦 Install from skills.sh
+
+The easiest way to install this skill is via the [skills.sh](https://skills.sh) CLI:
 
 ```bash
+# Install the skill
 npx skills add Marwichmisi/yolo-mobile-integration
+
+# Or install to a specific agent (e.g., OpenCode, Claude Code, Codex)
+npx skills add Marwichmisi/yolo-mobile-integration -a opencode
+
+# Or install globally
+npx skills add Marwichmisi/yolo-mobile-integration -g
 ```
 
-Or install directly with OpenCode:
+> **Note**: The skills CLI supports [OpenCode](https://opencode.ai), [Claude Code](https://claude.ai), [Codex](https://openai.com/codex), [Cursor](https://cursor.com), and 72+ more agents.
+
+### 1. Install Ultralytics
 
 ```bash
-opencode skill install Marwichmisi/yolo-mobile-integration
+pip install ultralytics
 ```
 
-## Available Skills
+### 2. Export YOLO26 for Mobile
 
-### yolo-mobile-integration
+```python
+from ultralytics import YOLO
 
-Complete workflow for integrating YOLO26 into mobile apps. Includes:
+# Load YOLO26 model
+model = YOLO("yolo26n.pt")
 
-- **SKILL.md** — Main orchestration logic with context detection and routing
-- **references/** — 14 detailed reference files:
-  - `yolo26-model.md` — Model specs, training, architecture
-  - `export-pipeline.md` — Full export pipeline with all formats
-  - `platforms/ios-coreml.md` — iOS deployment with CoreML
-  - `platforms/android-litert.md` — Android deployment with LiteRT
-  - `platforms/android-ncnn.md` — Android deployment with NCNN
-  - `platforms/cross-platform-executorch.md` — Cross-platform with ExecuTorch
-  - `platforms/web-tfjs.md` — Browser-based detection with LiteRT.js
-  - `frameworks/flutter-integration.md` — Flutter Platform Channel integration
-  - `frameworks/react-native-integration.md` — React Native Native Module integration
-  - `tasks/detection.md`, `segmentation.md`, `classification.md`, `pose-estimation.md`, `obb.md`, `semantic.md`
-  - `use-cases/fitness-coach.md`, `security-alarm.md`, `object-counting.md`, `parking-management.md`, `distance-measurement.md`, `heatmap-analytics.md`, `object-blurring.md`
-  - `hardware/raspberry-pi.md`, `nvidia-jetson.md`, `edge-tpu.md`
-- **scripts/** — Automation tools:
-  - `export_model.py` — Export YOLO26 to any mobile format
-  - `benchmark_mobile.py` — Benchmark models on target devices
-  - `create_project.py` — Scaffold Flutter/RN projects with YOLO
+# Export for iOS (CoreML)
+model.export(format="coreml", quantize=8)
 
-## Quick Start
+# Export for Android (LiteRT)
+model.export(format="litert", quantize="w8a32")
 
-### Export a Model
+# Export for cross-platform (NCNN)
+model.export(format="ncnn")
+```
+
+### 3. Integrate into Your App
+
+Choose your platform:
+
+| Platform | SDK | Documentation |
+|----------|-----|---------------|
+| **iOS** | [Ultralytics YOLO iOS SDK](https://github.com/ultralytics/yolo-ios-app) | [Guide](skills/yolo-mobile-integration/references/platforms/ios-coreml.md) |
+| **Flutter** | [Ultralytics YOLO Flutter Plugin](https://github.com/ultralytics/yolo-flutter-app) | [Guide](skills/yolo-mobile-integration/references/frameworks/flutter-integration.md) |
+| **React Native** | Custom Native Modules | [Guide](skills/yolo-mobile-integration/references/frameworks/react-native-integration.md) |
+| **Web** | [@ultralytics/yolo NPM](https://www.npmjs.com/package/@ultralytics/yolo) | [Guide](skills/yolo-mobile-integration/references/platforms/web-tfjs.md) |
+
+---
+
+## 🎯 Supported Tasks
+
+| Task | Model Variants | Description | Mobile Use Case |
+|------|---------------|-------------|-----------------|
+| **Detection** | `yolo26{n,s,m,l,x}.pt` | Object detection with bounding boxes | Security, counting, tracking |
+| **Segmentation** | `yolo26{n,s,m,l,x}-seg.pt` | Instance segmentation with pixel masks | Medical, AR, photo editing |
+| **Semantic** | `yolo26{n,s,m,l,x}-sem.pt` | Semantic segmentation (per-pixel class) | Scene understanding |
+| **Depth** | `yolo26{n,s,m,l,x}-depth.pt` | Monocular depth estimation (meters) | AR, photography, navigation |
+| **Classification** | `yolo26{n,s,m,l,x}-cls.pt` | Image classification | Content moderation, sorting |
+| **Pose** | `yolo26{n,s,m,l,x}-pose.pt` | 17-keypoint pose estimation | Fitness, sports, animation |
+| **OBB** | `yolo26{n,s,m,l,x}-obb.pt` | Oriented bounding boxes | Aerial imagery, documents |
+
+---
+
+## 📦 Export Formats
+
+### Mobile-Optimized Formats
+
+| Format | iOS | Android | Web | Quantization | Best For |
+|--------|-----|---------|-----|--------------|----------|
+| **CoreML** | ✅ Native | ❌ | ❌ | FP16, INT8, W8A16 | iOS apps |
+| **Core AI** | ✅ iOS 27+ | ❌ | ❌ | INT8 | Future iOS |
+| **LiteRT** | ✅ | ✅ Native | ✅ LiteRT.js | INT8, W8A16, W8A32 | Universal mobile |
+| **NCNN** | ✅ | ✅ Native | ❌ | FP16 | ARM devices |
+| **ExecuTorch** | ✅ | ✅ | ❌ | FP32 | PyTorch ecosystem |
+| **ONNX** | Via inter. | Via inter. | ✅ | FP16, INT8 | Interchange |
+| **MNN** | ✅ | ✅ | ❌ | FP16, INT8 | Alibaba devices |
+| **RKNN** | ❌ | ✅ | ❌ | FP16, INT8 | Rockchip NPU |
+| **QNN** | ❌ | ✅ | ❌ | W8A16 | Snapdragon NPU |
+| **Edge TPU** | ❌ | ✅ | ❌ | INT8 auto | Google Coral |
+| **TensorRT** | ❌ | ✅ | ❌ | FP16, INT8 | NVIDIA Jetson |
+
+### Quantization Options
+
+| Value | Type | Size Reduction | Calibration Needed |
+|-------|------|----------------|-------------------|
+| `quantize=8` | INT8 | ~75% | Yes (static) |
+| `quantize=16` | FP16 | ~50% | No |
+| `quantize="w8a16"` | INT8 weights + FP16 activations | ~70% | No |
+| `quantize="w8a32"` | Dynamic INT8 | ~70% | No |
+
+---
+
+## 📊 Benchmarks
+
+### iPhone 17 Pro (A19 Pro) — CoreML
+
+| Task | CPU (ms) | CPU+ANE (ms) | FPS (ANE) |
+|------|----------|--------------|-----------|
+| Detect | 9.2 | **3.2** | **312** |
+| Segment | 12.6 | **4.8** | **208** |
+| Semantic | 9.7 | **4.6** | **217** |
+| Depth | 25.0 | **5.3** | **189** |
+| Classify | 2.2 | **1.9** | **526** |
+| Pose | 11.9 | **3.9** | **256** |
+| OBB | 10.6 | **3.4** | **294** |
+
+### Xiaomi 17 (Snapdragon 8 Elite Gen 5) — LiteRT w8a32
+
+| Task | CPU (ms) | GPU (ms) | FPS (GPU) |
+|------|----------|----------|-----------|
+| Detect | 52.2 | **15.8** | **63** |
+| Segment | 73.4 | **33.2** | **30** |
+| Depth | 124.4 | **23.0** | **43** |
+| Classify | 4.4 | **3.1** | **323** |
+| Pose | 57.4 | **16.6** | **60** |
+| OBB | 50.3 | **11.7** | **85** |
+
+### Edge Devices
+
+| Device | Format | YOLO26n FPS | YOLO26s FPS |
+|--------|--------|-------------|-------------|
+| Raspberry Pi 5 | NCNN | ~8 | ~4 |
+| Jetson Orin Nano | TensorRT FP16 | ~45 | ~25 |
+| Jetson AGX Orin | TensorRT FP16 | ~120 | ~70 |
+| Coral USB Accelerator | Edge TPU | ~30 | ~15 |
+
+---
+
+## 💡 Use Cases
+
+| Use Case | Task | Platform | Reference |
+|----------|------|----------|-----------|
+| 🏋️ **Fitness Coach** | Pose | Flutter | [Guide](skills/yolo-mobile-integration/references/use-cases/fitness-coach.md) |
+| 🔒 **Security Alarm** | Detection | iOS/Android | [Guide](skills/yolo-mobile-integration/references/use-cases/security-alarm.md) |
+| 🔢 **Object Counting** | Detection | React Native | [Guide](skills/yolo-mobile-integration/references/use-cases/object-counting.md) |
+| 🅿️ **Parking Management** | Detection | Flutter | [Guide](skills/yolo-mobile-integration/references/use-cases/parking-management.md) |
+| 📏 **Distance Measurement** | Depth | iOS/Android | [Guide](skills/yolo-mobile-integration/references/use-cases/distance-measurement.md) |
+| 🔥 **Heatmap Analytics** | Detection | Web | [Guide](skills/yolo-mobile-integration/references/use-cases/heatmap-analytics.md) |
+| 🎭 **Object Blurring** | Segmentation | Flutter | [Guide](skills/yolo-mobile-integration/references/use-cases/object-blurring.md) |
+
+---
+
+## 📱 Platform Support
+
+### Framework Integration
+
+| Framework | iOS | Android | Documentation |
+|-----------|-----|---------|---------------|
+| **Flutter** | ✅ CoreML | ✅ LiteRT | [Guide](skills/yolo-mobile-integration/references/frameworks/flutter-integration.md) |
+| **React Native** | ✅ CoreML | ✅ LiteRT | [Guide](skills/yolo-mobile-integration/references/frameworks/react-native-integration.md) |
+| **Native Swift** | ✅ CoreML | — | [Guide](skills/yolo-mobile-integration/references/platforms/ios-coreml.md) |
+| **Native Kotlin** | — | ✅ LiteRT | [Guide](skills/yolo-mobile-integration/references/platforms/android-litert.md) |
+| **Web/PWA** | ✅ LiteRT.js | ✅ LiteRT.js | [Guide](skills/yolo-mobile-integration/references/platforms/web-tfjs.md) |
+
+### Hardware Deployment
+
+| Hardware | Format | Performance | Guide |
+|----------|--------|-------------|-------|
+| **Raspberry Pi 5** | NCNN | ~8 FPS (YOLO26n) | [Guide](skills/yolo-mobile-integration/references/hardware/raspberry-pi.md) |
+| **NVIDIA Jetson Orin** | TensorRT | 30-60 FPS (YOLO26n) | [Guide](skills/yolo-mobile-integration/references/hardware/nvidia-jetson.md) |
+| **Google Coral** | Edge TPU | ~30 FPS (YOLO26n) | [Guide](skills/yolo-mobile-integration/references/hardware/edge-tpu.md) |
+
+---
+
+## 🔧 Installation
+
+### Prerequisites
+
+- Python 3.8+
+- pip or conda
+- For iOS export: macOS with Xcode
+- For Android: Android SDK
+
+### Install Ultralytics
 
 ```bash
-python scripts/export_model.py --model yolo26n --format coreml --quantize int8
+# Using pip
+pip install ultralytics
+
+# Using conda
+conda install -c conda-forge ultralytics
+
+# From source
+git clone https://github.com/ultralytics/ultralytics.git
+cd ultralytics
+pip install -e .
 ```
 
-### Scaffold a Flutter Project
+### Verify Installation
 
-```bash
-python scripts/create_project.py --framework flutter --task detect --platform both
+```python
+from ultralytics import YOLO
+
+# Load a model
+model = YOLO("yolo26n.pt")
+
+# Export for mobile
+model.export(format="coreml", quantize=8)
 ```
 
-### Benchmark on Device
+---
 
-```bash
-python scripts/benchmark_mobile.py --model yolo26n.mlpackage --device iphone
-```
+## 📖 Documentation
 
-## Supported Platforms
-
-| Platform | Format | Command |
-|----------|--------|---------|
-| iOS | CoreML | `export --format coreml --quantize int8` |
-| Android | LiteRT | `export --format litert --quantize int8` |
-| Android (ARM) | NCNN | `export --format ncnn` |
-| Cross-platform | ExecuTorch | `export --format executorch` |
-| Web | LiteRT.js | `export --format litert` + JS integration |
-| Raspberry Pi | NCNN | `export --format ncnn` |
-| Jetson | TensorRT | `export --format engine` |
-| Coral | Edge TPU | `export --format edgetpu` |
-
-## Supported Tasks
-
-| Task | Model Variant | Use Case |
-|------|--------------|----------|
-| Detection | `yolo26{n,s,m,l,x}.pt` | Identify objects in camera feed |
-| Segmentation | `yolo26{n,s,m,l,x}-seg.pt` | Pixel-level object masks |
-| Classification | `yolo26{n,s,m,l,x}-cls.pt` | Categorize images |
-| Pose | `yolo26{n,s,m,l,x}-pose.pt` | Human pose estimation |
-| OBB | `yolo26{n,s,m,l,x}-obb.pt` | Oriented bounding boxes |
-| Semantic | `yolo26{n,s,m,l,x}-sem.pt` | Pixel-level scene labels |
-
-## Use Cases
-
-| Use Case | Description | Reference |
-|----------|-------------|-----------|
-| Fitness Coach | Real-time exercise detection, rep counting, form analysis | `use-cases/fitness-coach.md` |
-| Security Alarm | Motion detection, intrusion alerts, event logging | `use-cases/security-alarm.md` |
-| Object Counting | People/vehicle counting with line-crossing logic | `use-cases/object-counting.md` |
-| Parking Management | Spot detection, occupancy tracking | `use-cases/parking-management.md` |
-| Distance Measurement | AR-based real-world measurement | `use-cases/distance-measurement.md` |
-| Heatmap Analytics | People flow, dwell time visualization | `use-cases/heatmap-analytics.md` |
-| Object Blurring | Privacy-preserving face/plate blurring | `use-cases/object-blurring.md` |
-
-## Performance
-
-YOLO26n on mobile devices:
-
-| Device | Format | FPS | Latency |
-|--------|--------|-----|---------|
-| iPhone 17 Pro (Neural Engine) | CoreML | ~260 | 3.8ms |
-| iPhone 17 Pro (CPU) | CoreML | ~110 | 9.1ms |
-| Raspberry Pi 5 | NCNN | ~8 | 128ms |
-| NVIDIA T4 | TensorRT FP16 | ~588 | 1.7ms |
-
-## Companion Skills
-
-This skill works best alongside:
-
-- `flutter-apply-architecture-best-practices` — App architecture (MVVM, layered)
-- `react-native-best-practices` — Performance optimization (Hermes, native modules)
-
-## Repository Structure
+### Skill Structure
 
 ```
-yolo-mobile-integration/
-├── README.md
-├── skills/
-│   └── yolo-mobile-integration/
-│       ├── SKILL.md                    # Main orchestration
-│       ├── references/                 # 14 reference files
-│       │   ├── yolo26-model.md
-│       │   ├── export-pipeline.md
-│       │   ├── platforms/
-│       │   ├── frameworks/
-│       │   ├── tasks/
-│       │   ├── use-cases/
-│       │   └── hardware/
-│       ├── scripts/                    # Automation tools
-│       │   ├── export_model.py
-│       │   ├── benchmark_mobile.py
-│       │   └── create_project.py
-│       └── evals/
-│           └── evals.json
-└── yolo-mobile-integration-workspace/  # Evaluation results
+skills/yolo-mobile-integration/
+├── SKILL.md                          # Main orchestrator
+├── references/
+│   ├── yolo26-model.md               # Model selection guide
+│   ├── export-pipeline.md            # Export instructions
+│   ├── frameworks/
+│   │   ├── flutter-integration.md    # Flutter integration
+│   │   └── react-native-integration.md
+│   ├── platforms/
+│   │   ├── ios-coreml.md             # iOS CoreML
+│   │   ├── android-litert.md         # Android LiteRT
+│   │   ├── android-ncnn.md           # Android NCNN
+│   │   ├── cross-platform-executorch.md
+│   │   └── web-tfjs.md               # Web LiteRT.js
+│   ├── tasks/
+│   │   ├── detection.md
+│   │   ├── segmentation.md
+│   │   ├── classification.md
+│   │   ├── pose-estimation.md
+│   │   ├── obb.md
+│   │   ├── semantic.md
+│   │   └── depth.md
+│   ├── use-cases/
+│   │   ├── fitness-coach.md
+│   │   ├── security-alarm.md
+│   │   ├── object-counting.md
+│   │   ├── parking-management.md
+│   │   ├── distance-measurement.md
+│   │   ├── heatmap-analytics.md
+│   │   └── object-blurring.md
+│   └── hardware/
+│       ├── raspberry-pi.md
+│       ├── nvidia-jetson.md
+│       └── edge-tpu.md
+├── scripts/
+│   ├── export_model.py               # Export helper
+│   ├── create_project.py             # Project scaffolder
+│   └── benchmark_mobile.py           # Benchmark tool
+└── evals/
+    └── evals.json                    # Test cases
 ```
 
-## License
+### Key References
 
-MIT
+| Document | Description |
+|----------|-------------|
+| [YOLO26 Model Reference](skills/yolo-mobile-integration/references/yolo26-model.md) | Complete model guide |
+| [Export Pipeline](skills/yolo-mobile-integration/references/export-pipeline.md) | All export formats |
+| [Flutter Integration](skills/yolo-mobile-integration/references/frameworks/flutter-integration.md) | Complete Flutter guide |
+| [React Native Integration](skills/yolo-mobile-integration/references/frameworks/react-native-integration.md) | Complete RN guide |
 
-## Author
+---
 
-[Marwichmisi](https://github.com/Marwichmisi)
+## 🤝 Contributing
+
+We welcome contributions! Please see our [Contributing Guide](CONTRIBUTING.md) for details.
+
+### Ways to Contribute
+
+- 🐛 Report bugs
+- 💡 Suggest features
+- 📝 Improve documentation
+- 🔧 Submit pull requests
+- ⭐ Star the repository
+
+---
+
+## 📄 License
+
+This project is licensed under the [AGPL-3.0 License](LICENSE) - see the [LICENSE](LICENSE) file for details.
+
+### Ultralytics License
+
+YOLO26 models are licensed under [AGPL-3.0](https://www.gnu.org/licenses/agpl-3.0.html) or [Enterprise License](https://www.ultralytics.com/license).
+
+---
+
+## 🙏 Acknowledgements
+
+- [Ultralytics](https://github.com/ultralytics) for the amazing YOLO26 models
+- [Apple](https://developer.apple.com/machine-learning/) for CoreML
+- [Google](https://www.tensorflow.org/lite) for LiteRT
+- [Tencent](https://github.com/Tencent/ncnn) for NCNN
+- [PyTorch](https://pytorch.org/) for ExecuTorch
+
+---
+
+<div align="center">
+
+### ⭐ If you find this project helpful, please give it a star!
+
+[![Star History Chart](https://api.star-history.com/svg?repos=ultralytics/ultralytics&type=Date)](https://star-history.com/#ultralytics/ultralytics&Date)
+
+**Made with ❤️ by the YOLO26 Mobile Integration Team**
+
+[⬆ Back to Top](#-yolo26-mobile-integration)
+
+</div>
