@@ -51,11 +51,11 @@ yolo export model=yolo26n.pt format=coreml quantize=16
 |----------|------|--------|-------------|
 | `format` | `str` | `'coreml'` | Format cible pour le modèle exporté |
 | `imgsz` | `int` ou `tuple` | `640` | Taille d'entrée (carrée ou `(height, width)`) |
-| `quantize` | `int` ou `str` | `None` | Précision : `8` (INT8), `16` (FP16), `32` (FP32) |
-| `nms` | `bool` | `False` | Intègre NMS (inutile pour YOLO26) |
+| `quantize` | `int` ou `str` | `None` | Précision : `8` (INT8), `16` (FP16), `32` (FP32), `"w8a16"`, `"w8a32"` |
+| `nms` | `bool/None` | `None` | `None`=raw outputs, `True`=embed NMS, `False`=NMS-free head |
 | `dynamic` | `bool` | `False` | Autorise des tailles d'entrée dynamiques |
 | `batch` | `int` | `1` | Taille du lot d'inférence |
-| `device` | `str` | `None` | Appareil : `cpu`, `mps`, ou GPU index |
+| `device` | `str` | `None` | Appareil : `cpu`, `0` (GPU), `mps`, `npu` |
 
 ### Validation et inférence en Python
 

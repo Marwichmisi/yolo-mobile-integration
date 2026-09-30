@@ -19,7 +19,7 @@ Utilisez ce guide quand vous devez :
 
 ## Vue d'ensemble
 
-**Important** : Depuis Ultralytics 8.4.83, le format `tfjs` est obsolète et remplacé par **LiteRT**. Le format `litert` exporte un modèle `.tflite` qui s'exécute dans le navigateur via [LiteRT.js](https://github.com/nicknisi/nicknisi/nicknisi/nicknisi) avec accélération WebGPU/WASM.
+**Important** : Depuis Ultralytics 8.4.83, le format `tfjs` est obsolète et remplacé par **LiteRT**. Le format `litert` exporte un modèle `.tflite` qui s'exécute dans le navigateur via [LiteRT.js](https://github.com/google-ai-edge/LiteRT) avec accélération WebGPU/WASM.
 
 ### Avantages principaux
 - **Un seul modèle** : Même fichier `.tflite` pour mobile, embarqué et web

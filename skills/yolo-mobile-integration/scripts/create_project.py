@@ -15,8 +15,8 @@ import sys
 from pathlib import Path
 
 
-# Template directories
-TEMPLATES_DIR = Path(__file__).parent.parent / "assets" / "templates"
+# Note: Templates are now embedded directly in this script.
+# The assets/templates/ directory is no longer used.
 
 
 def create_flutter_project(

@@ -88,7 +88,7 @@ yolo benchmark model=runs/detect/train/weights/best.pt imgsz=640
 
 ## 2. Tous les Formats d'Exportation
 
-### Tableau complet des 18+ formats
+### Tableau complet des 22 formats
 
 | Format | Argument `format` | Modèle généré | Mobile? | Quantification |
 |--------|-------------------|---------------|---------|----------------|
@@ -98,6 +98,7 @@ yolo benchmark model=runs/detect/train/weights/best.pt imgsz=640
 | **OpenVINO** | `openvino` | `yolo26n_openvino_model/` | ✅ | FP16, INT8 |
 | **TensorRT** | `engine` | `yolo26n.engine` | ⚠️ GPU | FP16, INT8 |
 | **CoreML** | `coreml` | `yolo26n.mlpackage` | ✅ iOS | FP16, INT8, W8A16 |
+| **Core AI** | `coreai` | `yolo26n.aimodel` | ✅ iOS 27+ | INT8 |
 | **TF SavedModel** | `saved_model` | `yolo26n_saved_model/` | ✅ | INT8 |
 | **TF GraphDef** | `pb` | `yolo26n.pb` | ❌ | ❌ |
 | **Edge TPU** | `edgetpu` | `yolo26n_edgetpu.tflite` | ✅ | INT8 auto |
@@ -110,6 +111,8 @@ yolo benchmark model=runs/detect/train/weights/best.pt imgsz=640
 | **Axelera** | `axelera` | `yolo26n_axelera_model/` | ✅ | INT8 auto |
 | **DEEPX** | `deepx` | `yolo26n_deepx_model/` | ✅ | INT8 auto |
 | **Qualcomm QNN** | `qnn` | `yolo26n_qnn.onnx` | ✅ | W8A16 auto |
+| **Hailo** | `hailo` | `yolo26n_hailo_model/` | ✅ | INT8 |
+| **Huawei Ascend** | `ascend` | `yolo26n_ascend_model/` | ✅ | INT8 |
 | **LiteRT** | `litert` | `yolo26n.tflite` | ✅ | INT8, W8A16, W8A32 |
 
 ### Recommandations par plateforme mobile

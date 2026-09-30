@@ -74,16 +74,17 @@ model.train(data="coco8.yaml", epochs=100)
 
 ---
 
-## 2. Les 6 Variantes de Tâches
+## 2. Les 7 Variantes de Tâches
 
 | Modèle | Noms de fichiers | Tâche | Inférence | Val. | Train | Export |
 |--------|------------------|-------|-----------|------|-------|--------|
 | **YOLO26** | `yolo26n.pt` `yolo26s.pt` `yolo26m.pt` `yolo26l.pt` `yolo26x.pt` | Détection | ✅ | ✅ | ✅ | ✅ |
 | **YOLO26-seg** | `yolo26n-seg.pt` `yolo26s-seg.pt` `yolo26m-seg.pt` `yolo26l-seg.pt` `yolo26x-seg.pt` | Segmentation d'instance | ✅ | ✅ | ✅ | ✅ |
 | **YOLO26-sem** | `yolo26n-sem.pt` `yolo26s-sem.pt` `yolo26m-sem.pt` `yolo26l-sem.pt` `yolo26x-sem.pt` | Segmentation sémantique | ✅ | ✅ | ✅ | ✅ |
+| **YOLO26-depth** | `yolo26n-depth.pt` `yolo26s-depth.pt` `yolo26m-depth.pt` `yolo26l-depth.pt` `yolo26x-depth.pt` | Estimation de profondeur | ✅ | ✅ | ✅ | ✅ |
+| **YOLO26-cls** | `yolo26n-cls.pt` `yolo26s-cls.pt` `yolo26m-cls.pt` `yolo26l-cls.pt` `yolo26x-cls.pt` | Classification | ✅ | ✅ | ✅ | ✅ |
 | **YOLO26-pose** | `yolo26n-pose.pt` `yolo26s-pose.pt` `yolo26m-pose.pt` `yolo26l-pose.pt` `yolo26x-pose.pt` | Estimation de pose | ✅ | ✅ | ✅ | ✅ |
 | **YOLO26-obb** | `yolo26n-obb.pt` `yolo26s-obb.pt` `yolo26m-obb.pt` `yolo26l-obb.pt` `yolo26x-obb.pt` | Détection orientée (OBB) | ✅ | ✅ | ✅ | ✅ |
-| **YOLO26-cls** | `yolo26n-cls.pt` `yolo26s-cls.pt` `yolo26m-cls.pt` `yolo26l-cls.pt` `yolo26x-cls.pt` | Classification | ✅ | ✅ | ✅ | ✅ |
 
 ### Variantes architecturales (YAML uniquement)
 
@@ -117,16 +118,20 @@ results = model("image.jpg")
 model = YOLO("yolo26m-sem.pt")
 results = model("image.jpg")
 
+# Estimation de profondeur (monoculaire, en mètres)
+model = YOLO("yolo26m-depth.pt")
+results = model("image.jpg")
+
+# Classification
+model = YOLO("yolo26m-cls.pt")
+results = model("image.jpg")
+
 # Estimation de pose (17 keypoints COCO par défaut)
 model = YOLO("yolo26m-pose.pt")
 results = model("image.jpg")
 
 # Détection orientée
 model = YOLO("yolo26m-obb.pt")
-results = model("image.jpg")
-
-# Classification
-model = YOLO("yolo26m-cls.pt")
 results = model("image.jpg")
 ```
 
